@@ -1,6 +1,6 @@
 namespace Aufgabe6 {
     window.addEventListener("load", init);
-    let address: string = "https://eia2-node-danielkern.herokuapp.com";
+    let address: string = " https://asmr-umfrage.herokuapp.com";
 
     let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
 
