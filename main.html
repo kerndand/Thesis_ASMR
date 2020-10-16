@@ -7,7 +7,7 @@
 		<script src="script.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<form method="POST">
+		<form id="form" method="GET">
 			<div id="demographics">
 				<fieldset>
 					<legend>Welches Geschlecht haben Sie?</legend>
@@ -31,6 +31,7 @@
 				</fieldset>
 			</div>
 		</form>
-		<button type="button">Next</button>
+		<button type="button" id="button">Next</button>
+		<button type="submit" form="form">Submit</button>
 	</body>
 </html>
