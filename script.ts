@@ -2,6 +2,8 @@ namespace ASMR_Script{
     window.addEventListener("load", handleLoad);
     let demographics: HTMLDivElement;  
 
+    let random: number = Math.floor(Math.random()*9);
+
     // Multidimensionale Arrays mit Daten für die Radio-Buttons
     let adjArrays = [
         ["adj1.1", "adj1.2", "adj1.3", "adj1.4", "adj1.5", "adj1.6", "adj1.7", "adj1.8", "adj1.9", "adj1.10"],
@@ -49,7 +51,14 @@ namespace ASMR_Script{
         if (gender.value && parseInt(age.value) > 0 && parseInt(age.value) < 120){
             demographics.style.display = "none";
 
-            let random: number = Math.floor(Math.random()*9);
+        let audio: HTMLAudioElement = document.createElement("audio");
+            audio.controls = true;
+        let source: HTMLSourceElement = document.createElement("source");
+            source.setAttribute("src", "audio/file"+JSON.stringify(random)+".mp3");
+            source.setAttribute("type", "audio/mpeg");
+            audio.appendChild(source);
+            document.getElementById("soundcontainer").appendChild(audio);
+
 
         // Generiere Adjektiv-Box     
             let fieldsetAdj: HTMLFieldSetElement = document.createElement("fieldset");
@@ -77,17 +86,17 @@ namespace ASMR_Script{
             let inputAdj: HTMLInputElement = document.createElement("input");
                 inputAdj.setAttribute("type", "radio");
                 inputAdj.setAttribute("name", "adjective");
-                inputAdj.setAttribute("id", "otheradj");
+                inputAdj.setAttribute("id", "otheradj" + JSON.stringify(random));
            
             let labelAdj: HTMLLabelElement = document.createElement("label");
-                labelAdj.setAttribute("for", "otheradj"); 
+                labelAdj.setAttribute("for", "otheradj"+ JSON.stringify(random)); 
             
             let textAdj: HTMLInputElement = document.createElement("input");
                 textAdj.setAttribute("type", "text");
-                textAdj.setAttribute("id", "text");
+                textAdj.setAttribute("id", "textadj"+JSON.stringify(random));
                 textAdj.setAttribute("placeholder", "Anderes Adjektiv");
-                textAdj.onclick = checkRadio;
-                textAdj.onchange = radioValue;
+                textAdj.onclick = checkRadioAdj;
+                textAdj.onchange = radioValueAdj;
                
                 fieldsetAdj.appendChild(inputAdj);
                 fieldsetAdj.appendChild(labelAdj);
@@ -119,17 +128,17 @@ namespace ASMR_Script{
             let inputVerb: HTMLInputElement = document.createElement("input");
                 inputVerb.setAttribute("type", "radio");
                 inputVerb.setAttribute("name", "verb");
-                inputVerb.setAttribute("id", "otheradj");
+                inputVerb.setAttribute("id", "otherverb"+JSON.stringify(random));
            
             let labelVerb: HTMLLabelElement = document.createElement("label");
-                labelVerb.setAttribute("for", "otheradj"); 
+                labelVerb.setAttribute("for", "otherverb"+JSON.stringify(random)); 
             
             let textVerb: HTMLInputElement = document.createElement("input");
                 textVerb.setAttribute("type", "text");
-                textVerb.setAttribute("id", "text");
+                textVerb.setAttribute("id", "textverb"+JSON.stringify(random));
                 textVerb.setAttribute("placeholder", "Anderes Verb");
-                textVerb.onclick = checkRadio;
-                textVerb.onchange = radioValue;
+                textVerb.onclick = checkRadioVerb;
+                textVerb.onchange = radioValueVerb;
                
                 fieldsetVerb.appendChild(inputVerb);
                 fieldsetVerb.appendChild(labelVerb);
@@ -162,17 +171,17 @@ namespace ASMR_Script{
             let inputNoun: HTMLInputElement = document.createElement("input");
                 inputNoun.setAttribute("type", "radio");
                 inputNoun.setAttribute("name", "noun");
-                inputNoun.setAttribute("id", "otheradj");
+                inputNoun.setAttribute("id", "othernoun"+JSON.stringify(random));
            
             let labelNoun: HTMLLabelElement = document.createElement("label");
-                labelNoun.setAttribute("for", "otheradj"); 
+                labelNoun.setAttribute("for", "othernoun"+JSON.stringify(random)); 
             
             let textNoun: HTMLInputElement = document.createElement("input");
                 textNoun.setAttribute("type", "text");
-                textNoun.setAttribute("id", "text");
+                textNoun.setAttribute("id", "textnoun"+JSON.stringify(random));
                 textNoun.setAttribute("placeholder", "Anderes Nomen");
-                textNoun.onclick = checkRadio;
-                textNoun.onchange = radioValue;
+                textNoun.onclick = checkRadioNoun;
+                textNoun.onchange = radioValueNoun;
                
                 fieldsetNoun.appendChild(inputNoun);
                 fieldsetNoun.appendChild(labelNoun);
@@ -182,19 +191,51 @@ namespace ASMR_Script{
             alert("Bitte geben Sie ihr Geschlecht und Alter an!");
         };
     };
-    // Bei Klick auf das Textfeld wird der Radio-Button gecheckt
-    function checkRadio(): void {
-        let input: HTMLInputElement = <HTMLInputElement>document.getElementById("otheradj");
-        input.checked = true;
+    // Check Radio-Button bei Klick auf Textfeld (Adjektiv)
+    function checkRadioAdj(): void {
+        let inputAdj: HTMLInputElement = <HTMLInputElement>document.getElementById("otheradj"+JSON.stringify(random));
+        inputAdj.checked = true;
     };
 
-    //Wenn der Radio-Button gecheckt ist wird der Value des Textfeldes für den Radio-Button übernommen
-    function radioValue(): void {
-        let input: HTMLInputElement = <HTMLInputElement>document.getElementById("otheradj");
-        let text: HTMLInputElement = <HTMLInputElement>document.getElementById("text");
+    // Setze den Wert des Textfeldes als Wert des Radio-Buttons (Adjektiv)
+    function radioValueAdj(): void {
+        let inputAdj: HTMLInputElement = <HTMLInputElement>document.getElementById("otheradj"+JSON.stringify(random));
+        let textAdj: HTMLInputElement = <HTMLInputElement>document.getElementById("textadj"+JSON.stringify(random));
 
-        if (input.checked == true){
-            input.value = text.value;
+        if (inputAdj.checked == true){
+            inputAdj.value = textAdj.value;
+        };
+    };
+
+     // Check Radio-Button bei Klick auf Textfeld (Verb)
+     function checkRadioVerb(): void {
+        let inputVerb: HTMLInputElement = <HTMLInputElement>document.getElementById("otherverb"+JSON.stringify(random));
+        inputVerb.checked = true;
+    };
+
+    // Setze den Wert des Textfeldes als Wert des Radio-Buttons (Verb)
+    function radioValueVerb(): void {
+        let inputVerb: HTMLInputElement = <HTMLInputElement>document.getElementById("otherverb"+JSON.stringify(random));
+        let textVerb: HTMLInputElement = <HTMLInputElement>document.getElementById("textverb"+JSON.stringify(random));
+
+        if (inputVerb.checked == true){
+            inputVerb.value = textVerb.value;
+        };
+    };
+
+    // Check Radio-Button bei Klick auf Textfeld (Nomen)
+    function checkRadioNoun(): void {
+        let inputNoun: HTMLInputElement = <HTMLInputElement>document.getElementById("othernoun"+JSON.stringify(random));
+        inputNoun.checked = true;
+    };
+
+    // Setze den Wert des Textfeldes als Wert des Radio-Buttons (Nomen)
+    function radioValueNoun(): void {
+        let inputNoun: HTMLInputElement = <HTMLInputElement>document.getElementById("othernoun"+JSON.stringify(random));
+        let textNoun: HTMLInputElement = <HTMLInputElement>document.getElementById("textnoun"+JSON.stringify(random));
+
+        if (inputNoun.checked == true){
+            inputNoun.value = textNoun.value;
         };
     };
 
