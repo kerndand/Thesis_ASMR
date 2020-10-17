@@ -2,7 +2,8 @@ var ASMR_Script;
 (function (ASMR_Script) {
     window.addEventListener("load", handleLoad);
     let demographics;
-    let random = Math.floor(Math.random() * 9);
+    let random;
+    let numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     // Multidimensionale Arrays mit Daten für die Radio-Buttons
     let adjArrays = [
         ["adj1.1", "adj1.2", "adj1.3", "adj1.4", "adj1.5", "adj1.6", "adj1.7", "adj1.8", "adj1.9", "adj1.10"],
@@ -25,34 +26,25 @@ var ASMR_Script;
         let button = document.querySelector("button");
         demographics.addEventListener("change", handleChange);
         button.addEventListener("click", handleClick);
-    }
-    ;
-    // Change-Funktion 
-    function handleChange(_event) {
-        let formData = new FormData(document.forms[0]);
-        for (let entry of formData) {
-            console.log(entry);
-        }
-        ;
-    }
-    ;
-    // Next-Button Click-Funktion
-    function handleClick(_event) {
-        let gender = document.getElementById("gender");
-        let age = document.getElementById("age");
-        // Wenn die Felder ausgefüllt wurden und der User auf den Next-Button klickt wird die Frage generiert
-        if (gender.value && parseInt(age.value) > 0 && parseInt(age.value) < 120) {
-            demographics.style.display = "none";
+        // Generiere Content 3 Mal
+        for (let i = 0; i < 3; i++) {
+            // Generiere random Nummer, welche sich nicht doppelt
+            let randomNumber = Math.floor(Math.random() * numberArray.length);
+            random = numberArray[randomNumber];
+            numberArray.splice(randomNumber, 1);
+            let div = document.createElement("div");
+            div.setAttribute("id", "div" + JSON.stringify(random));
+            document.getElementById("form").appendChild(div);
             let audio = document.createElement("audio");
             audio.controls = true;
             let source = document.createElement("source");
             source.setAttribute("src", "audio/file" + JSON.stringify(random) + ".mp3");
             source.setAttribute("type", "audio/mpeg");
             audio.appendChild(source);
-            document.getElementById("soundcontainer").appendChild(audio);
+            document.getElementById("div" + JSON.stringify(random)).appendChild(audio);
             // Generiere Adjektiv-Box     
             let fieldsetAdj = document.createElement("fieldset");
-            document.getElementById("form").appendChild(fieldsetAdj);
+            div.appendChild(fieldsetAdj);
             let legendAdj = document.createElement("legend");
             fieldsetAdj.appendChild(legendAdj);
             legendAdj.innerHTML = "Wie haben Sie sich beim Hören gefühlt? (Adjektiv)";
@@ -74,12 +66,12 @@ var ASMR_Script;
             let inputAdj = document.createElement("input");
             inputAdj.setAttribute("type", "radio");
             inputAdj.setAttribute("name", "adjective");
-            inputAdj.setAttribute("id", "otheradj" + JSON.stringify(random));
+            inputAdj.setAttribute("id", "otheradj");
             let labelAdj = document.createElement("label");
-            labelAdj.setAttribute("for", "otheradj" + JSON.stringify(random));
+            labelAdj.setAttribute("for", "otheradj");
             let textAdj = document.createElement("input");
             textAdj.setAttribute("type", "text");
-            textAdj.setAttribute("id", "textadj" + JSON.stringify(random));
+            textAdj.setAttribute("id", "textadj");
             textAdj.setAttribute("placeholder", "Anderes Adjektiv");
             textAdj.onclick = checkRadioAdj;
             textAdj.onchange = radioValueAdj;
@@ -88,7 +80,7 @@ var ASMR_Script;
             labelAdj.appendChild(textAdj);
             // Generiere Verb-Box     
             let fieldsetVerb = document.createElement("fieldset");
-            document.getElementById("form").appendChild(fieldsetVerb);
+            div.appendChild(fieldsetVerb);
             let legendVerb = document.createElement("legend");
             fieldsetVerb.appendChild(legendVerb);
             legendVerb.innerHTML = "Was ist passiert? (Verb)";
@@ -110,12 +102,12 @@ var ASMR_Script;
             let inputVerb = document.createElement("input");
             inputVerb.setAttribute("type", "radio");
             inputVerb.setAttribute("name", "verb");
-            inputVerb.setAttribute("id", "otherverb" + JSON.stringify(random));
+            inputVerb.setAttribute("id", "otherverb");
             let labelVerb = document.createElement("label");
-            labelVerb.setAttribute("for", "otherverb" + JSON.stringify(random));
+            labelVerb.setAttribute("for", "otherverb");
             let textVerb = document.createElement("input");
             textVerb.setAttribute("type", "text");
-            textVerb.setAttribute("id", "textverb" + JSON.stringify(random));
+            textVerb.setAttribute("id", "textverb");
             textVerb.setAttribute("placeholder", "Anderes Verb");
             textVerb.onclick = checkRadioVerb;
             textVerb.onchange = radioValueVerb;
@@ -124,7 +116,7 @@ var ASMR_Script;
             labelVerb.appendChild(textVerb);
             // Generiere Nomen-Box     
             let fieldsetNoun = document.createElement("fieldset");
-            document.getElementById("form").appendChild(fieldsetNoun);
+            div.appendChild(fieldsetNoun);
             let legendNoun = document.createElement("legend");
             fieldsetNoun.appendChild(legendNoun);
             legendNoun.innerHTML = "Woher kam das Geräusch? (Nomen)";
@@ -146,12 +138,12 @@ var ASMR_Script;
             let inputNoun = document.createElement("input");
             inputNoun.setAttribute("type", "radio");
             inputNoun.setAttribute("name", "noun");
-            inputNoun.setAttribute("id", "othernoun" + JSON.stringify(random));
+            inputNoun.setAttribute("id", "othernoun");
             let labelNoun = document.createElement("label");
-            labelNoun.setAttribute("for", "othernoun" + JSON.stringify(random));
+            labelNoun.setAttribute("for", "othernoun");
             let textNoun = document.createElement("input");
             textNoun.setAttribute("type", "text");
-            textNoun.setAttribute("id", "textnoun" + JSON.stringify(random));
+            textNoun.setAttribute("id", "textnoun");
             textNoun.setAttribute("placeholder", "Anderes Nomen");
             textNoun.onclick = checkRadioNoun;
             textNoun.onchange = radioValueNoun;
@@ -159,22 +151,28 @@ var ASMR_Script;
             fieldsetNoun.appendChild(labelNoun);
             labelNoun.appendChild(textNoun);
         }
-        else {
-            alert("Bitte geben Sie ihr Geschlecht und Alter an!");
+        ;
+    }
+    ;
+    // Change-Funktion 
+    function handleChange(_event) {
+        let formData = new FormData(document.forms[0]);
+        for (let entry of formData) {
+            console.log(entry);
         }
         ;
     }
     ;
     // Check Radio-Button bei Klick auf Textfeld (Adjektiv)
     function checkRadioAdj() {
-        let inputAdj = document.getElementById("otheradj" + JSON.stringify(random));
+        let inputAdj = document.getElementById("otheradj");
         inputAdj.checked = true;
     }
     ;
     // Setze den Wert des Textfeldes als Wert des Radio-Buttons (Adjektiv)
     function radioValueAdj() {
-        let inputAdj = document.getElementById("otheradj" + JSON.stringify(random));
-        let textAdj = document.getElementById("textadj" + JSON.stringify(random));
+        let inputAdj = document.getElementById("otheradj");
+        let textAdj = document.getElementById("textadj");
         if (inputAdj.checked == true) {
             inputAdj.value = textAdj.value;
         }
@@ -183,14 +181,14 @@ var ASMR_Script;
     ;
     // Check Radio-Button bei Klick auf Textfeld (Verb)
     function checkRadioVerb() {
-        let inputVerb = document.getElementById("otherverb" + JSON.stringify(random));
+        let inputVerb = document.getElementById("otherverb");
         inputVerb.checked = true;
     }
     ;
     // Setze den Wert des Textfeldes als Wert des Radio-Buttons (Verb)
     function radioValueVerb() {
-        let inputVerb = document.getElementById("otherverb" + JSON.stringify(random));
-        let textVerb = document.getElementById("textverb" + JSON.stringify(random));
+        let inputVerb = document.getElementById("otherverb");
+        let textVerb = document.getElementById("textverb");
         if (inputVerb.checked == true) {
             inputVerb.value = textVerb.value;
         }
@@ -199,19 +197,22 @@ var ASMR_Script;
     ;
     // Check Radio-Button bei Klick auf Textfeld (Nomen)
     function checkRadioNoun() {
-        let inputNoun = document.getElementById("othernoun" + JSON.stringify(random));
+        let inputNoun = document.getElementById("othernoun");
         inputNoun.checked = true;
     }
     ;
     // Setze den Wert des Textfeldes als Wert des Radio-Buttons (Nomen)
     function radioValueNoun() {
-        let inputNoun = document.getElementById("othernoun" + JSON.stringify(random));
-        let textNoun = document.getElementById("textnoun" + JSON.stringify(random));
+        let inputNoun = document.getElementById("othernoun");
+        let textNoun = document.getElementById("textnoun");
         if (inputNoun.checked == true) {
             inputNoun.value = textNoun.value;
         }
         ;
     }
+    ;
+    // Next-Button Click-Funktion
+    function handleClick(_event) { }
     ;
 })(ASMR_Script || (ASMR_Script = {}));
 ;
