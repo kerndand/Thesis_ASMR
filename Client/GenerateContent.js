@@ -29,7 +29,7 @@ var ASMR_Script;
             numberQuestions.push(random);
             numberArray.splice(randomNumber, 1);
             let source = document.createElement("source");
-            source.setAttribute("src", "audio/file" + JSON.stringify(random + 1) + ".mp3");
+            source.setAttribute("src", "../audio/file" + JSON.stringify(random + 1) + ".mp3");
             source.setAttribute("type", "audio/mpeg");
             source.setAttribute("name", "file" + JSON.stringify(random + 1));
             audio[i].appendChild(source);

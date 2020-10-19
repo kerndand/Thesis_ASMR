@@ -36,7 +36,7 @@ namespace ASMR_Script{
         
                     
                     let source: HTMLSourceElement = document.createElement("source");
-                        source.setAttribute("src", "audio/file"+JSON.stringify(random+1)+".mp3");
+                        source.setAttribute("src", "../audio/file"+JSON.stringify(random+1)+".mp3");
                         source.setAttribute("type", "audio/mpeg");
                         source.setAttribute("name", "file"+JSON.stringify(random+1));
                         audio[i].appendChild(source);
