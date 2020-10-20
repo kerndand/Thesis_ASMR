@@ -42,18 +42,18 @@ export namespace ASMR_Script {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            for (let key in url.query) {
+            /* for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "<br>");
             }
 
             let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString);
+            _response.write(jsonString); */
 
             storeAnswer(url.query);
         }
 
 
-        _response.write("Vielen Dank für Ihre Teilnahme!");
+        _response.write("<h2>Vielen Dank für Ihre Teilnahme!</h2>");
         _response.end();
     }
 

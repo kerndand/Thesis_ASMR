@@ -14,11 +14,11 @@ namespace ASMR_Script {
         submit.addEventListener("click", sendForms); */
     }
 
-   /*  async function sendForms(): Promise<void> {
-        let formData: FormData = new FormData(form);
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let response: Response = await fetch(url + "?" + query.toString());
-        let responseText: string = await response.text();
-        alert(responseText);
-    } */
+    /*  async function sendForms(): Promise<void> {
+         let formData: FormData = new FormData(form);
+         let query: URLSearchParams = new URLSearchParams(<any>formData);
+         let response: Response = await fetch(url + "?" + query.toString());
+         let responseText: string = await response.text();
+         alert(responseText);
+     } */
 }

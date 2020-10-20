@@ -45,14 +45,15 @@ var ASMR_Script;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
+            /* for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "<br>");
             }
-            let jsonString = JSON.stringify(url.query);
-            _response.write(jsonString);
+
+            let jsonString: string = JSON.stringify(url.query);
+            _response.write(jsonString); */
             storeAnswer(url.query);
         }
-        _response.write("Vielen Dank für Ihre Teilnahme!");
+        _response.write("<h2>Vielen Dank für Ihre Teilnahme!</h2>");
         _response.end();
     }
     function storeAnswer(_answer) {
