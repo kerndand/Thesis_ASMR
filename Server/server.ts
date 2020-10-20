@@ -58,7 +58,7 @@ export namespace ASMR_Script {
     }
 
     function storeAnswer(_answer: Answer): void{
-        database.insert(_answer); 
+        database.insertOne(_answer); 
     }
 
 }

@@ -57,7 +57,7 @@ var ASMR_Script;
         _response.end();
     }
     function storeAnswer(_answer) {
-        database.insert(_answer);
+        database.insertOne(_answer);
     }
 })(ASMR_Script = exports.ASMR_Script || (exports.ASMR_Script = {}));
 //# sourceMappingURL=server.js.map
