@@ -14,8 +14,8 @@ export namespace ASMR_Script {
         port = 5001;
     }
 
-    let databaseURL: string = "mongodb://localhost:27017";
-
+    //let databaseURL: string = "mongodb://localhost:27017";
+    let databaseURL: string = "mongodb+srv://user:<password>@asmrdatabase.4xbkn.mongodb.net/user?retryWrites=true&w=majority";
     startServer(port);
     connectToDatabase(databaseURL);
 

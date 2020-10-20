@@ -20,7 +20,8 @@ var ASMR_Script;
     if (port == undefined) {
         port = 5001;
     }
-    let databaseURL = "mongodb://localhost:27017";
+    //let databaseURL: string = "mongodb://localhost:27017";
+    let databaseURL = "mongodb+srv://user:<password>@asmrdatabase.4xbkn.mongodb.net/user?retryWrites=true&w=majority";
     startServer(port);
     connectToDatabase(databaseURL);
     function startServer(_port) {
