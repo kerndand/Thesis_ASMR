@@ -34,6 +34,7 @@ var ASMR_Script;
             source.setAttribute("name", "file" + JSON.stringify(random + 1));
             audio[i].appendChild(source);
             let file = document.getElementsByClassName("file");
+            file[i].setAttribute("name", "file" + JSON.stringify(i + 1));
             file[i].setAttribute("value", "file" + JSON.stringify(random + 1));
         }
         // Adjective 1                

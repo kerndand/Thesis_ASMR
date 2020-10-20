@@ -1,155 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+
+<head>
 	<title>ASMR</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
-		<script src="script2.js" type="text/javascript" charset="utf-8"></script>
-		<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
-		<!-- <script src="script.js" type="text/javascript" charset="utf-8"></script> -->
-	</head>
-	<body>
-		<form action="https://asmr-umfrage.herokuapp.com/" id="form" method="GET">
-			<div id="demographics">
-					<p>Welches Geschlecht haben Sie?</p>
-					<select id="gender" name="gender" required>
-						<option value="" disabled selected>Wähle ein Geschlecht</option>
-						<option value="männlich">Männlich</option>
-						<option value="weiblich">Weiblich</option>
-						<option value="divers">Divers</option>
-					</select><br>
-				
-					<p>Wie alt sind Sie?</p>
-					<input type="number" id="age" name="age" min="1" max="120" required/>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<script src="script2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <script src="script.js" type="text/javascript" charset="utf-8"></script> -->
+</head>
 
-					<p>Zusätzliche Informationen</p>
-					<input type="checkbox" name="info" id="experte" value="experte"/>
-						<label for="experte">Ich kenne mich im Bereich Audio aus</label><br>
-					<input type="checkbox" name="info" id="hear" value="hearingdamage">
-						<label for="hear">Ich habe einen Gehörschaden</label>
-			</div>
-			<div id="file1">
-				<h2>Hören Sie sich das erste Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
-				<input type="text" name="file" class="file">
-				<audio controls></audio>
-				<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)</p>
-				<input type="radio" name="adjective1" required>
-				<label class="labeladj1"></label><br>
-				<input type="radio" name="adjective1">
-				<label class="labeladj1"></label><br>
-				<input type="radio" name="adjective1">
-				<label class="labeladj1"></label><br>
-				<input type="radio" name="adjective1" id="otheradj1">
-				<label for="otheradj1">
-					<input type="text" placeholder="Anderes Adjektiv" id="textadj1">
-				</label>
+<!-- action="https://asmr-umfrage.herokuapp.com/" -->
+<body>
+	<form id="form" method="GET">
+		<div id="demographics">
+			<p>Welches Geschlecht haben Sie?</p>
+			<select id="gender" name="gender" required>
+				<option value="" disabled selected>Wähle ein Geschlecht</option>
+				<option value="männlich">Männlich</option>
+				<option value="weiblich">Weiblich</option>
+				<option value="divers">Divers</option>
+			</select><br>
 
-				<p>Was ist passiert? (Verb)</p>
-				<input type="radio" name="verb1" required>
-				<label class="labelverb1"></label><br>
-				<input type="radio" name="verb1">
-				<label class="labelverb1"></label><br>
-				<input type="radio" name="verb1">
-				<label class="labelverb1"></label><br>
-				<input type="radio" name="verb1" id="otherverb1">
-				<label for="otherverb1">
-					<input type="text" placeholder="Anderes Verb" id="textverb1">
-				</label>
+			<p>Wie alt sind Sie?</p>
+			<input type="number" id="age" name="age" min="1" max="120" required />
 
-				<p>Woher kam das Geräusch? (Nomen)</p>
-				<input type="radio" name="noun1" required>
-				<label class="labelnoun1"></label><br>
-				<input type="radio" name="noun1">
-				<label class="labelnoun1"></label><br>
-				<input type="radio" name="noun1">
-				<label class="labelnoun1"></label><br>
-				<input type="radio" name="noun1" id="othernoun1">
-				<label for="othernoun1">
-					<input type="text" placeholder="Anderes Nomen" id="textnoun1">
-				</label>
+			<p>Zusätzliche Informationen</p>
+			<input type="checkbox" name="info" id="experte" value="experte" />
+			<label for="experte">Ich kenne mich im Bereich Audio aus</label><br>
+			<input type="checkbox" name="info" id="hear" value="hearingdamage">
+			<label for="hear">Ich habe einen Gehörschaden</label>
+		</div>
+		<div id="file1">
+			<h2>Hören Sie sich das erste Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
+			<input type="text" class="file">
+			<audio controls></audio>
+			<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)</p>
+			<input type="radio" name="adjective1" required>
+			<label class="labeladj1"></label><br>
+			<input type="radio" name="adjective1">
+			<label class="labeladj1"></label><br>
+			<input type="radio" name="adjective1">
+			<label class="labeladj1"></label><br>
+			<input type="radio" name="adjective1" id="otheradj1">
+			<label for="otheradj1">
+				<input type="text" placeholder="Anderes Adjektiv" id="textadj1">
+			</label>
 
-			</div>
-			<div id="file2">
-				<h2>Hören Sie sich das zweite Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
-				<input type="text" name="file" class="file">
-				<audio controls></audio>
-				<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)</p>
-				<input type="radio" name="adjective2" required>
-				<label class="labeladj2"></label><br>
-				<input type="radio" name="adjective2">
-				<label class="labeladj2"></label><br>
-				<input type="radio" name="adjective2">
-				<label class="labeladj2"></label><br>
-				<input type="radio" name="adjective2" id="otheradj2">
-				<label for="otheradj2">
-					<input type="text" placeholder="Anderes Adjektiv" id="textadj2">
-				</label>
+			<p>Was ist passiert? (Verb)</p>
+			<input type="radio" name="verb1" required>
+			<label class="labelverb1"></label><br>
+			<input type="radio" name="verb1">
+			<label class="labelverb1"></label><br>
+			<input type="radio" name="verb1">
+			<label class="labelverb1"></label><br>
+			<input type="radio" name="verb1" id="otherverb1">
+			<label for="otherverb1">
+				<input type="text" placeholder="Anderes Verb" id="textverb1">
+			</label>
 
-				<p>Was ist passiert? (Verb)</p>
-				<input type="radio" name="verb2" required>
-				<label class="labelverb2"></label><br>
-				<input type="radio" name="verb2">
-				<label class="labelverb2"></label><br>
-				<input type="radio" name="verb2">
-				<label class="labelverb2"></label><br>
-				<input type="radio" name="verb2" id="otherverb2">
-				<label for="otherverb2">
-					<input type="text" placeholder="Anderes Verb" id="textverb2">
-				</label>
+			<p>Woher kam das Geräusch? (Nomen)</p>
+			<input type="radio" name="noun1" required>
+			<label class="labelnoun1"></label><br>
+			<input type="radio" name="noun1">
+			<label class="labelnoun1"></label><br>
+			<input type="radio" name="noun1">
+			<label class="labelnoun1"></label><br>
+			<input type="radio" name="noun1" id="othernoun1">
+			<label for="othernoun1">
+				<input type="text" placeholder="Anderes Nomen" id="textnoun1">
+			</label>
 
-				<p>Woher kam das Geräusch? (Nomen)</p>
-				<input type="radio" name="noun2" required>
-				<label class="labelnoun2"></label><br>
-				<input type="radio" name="noun2">
-				<label class="labelnoun2"></label><br>
-				<input type="radio" name="noun2">
-				<label class="labelnoun2"></label><br>
-				<input type="radio" name="noun2" id="othernoun2">
-				<label for="othernoun2">
-					<input type="text" placeholder="Anderes Nomen" id="textnoun2">
-				</label>
-			</div>
-			<div id="file3">
-				<h2>Hören Sie sich das dritte Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
-				<input type="text" name="file" class="file">
-				<audio controls></audio>
-				<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)</p>
-				<input type="radio" name="adjective3" required>
-				<label class="labeladj3"></label><br>
-				<input type="radio" name="adjective3">
-				<label class="labeladj3"></label><br>
-				<input type="radio" name="adjective3">
-				<label class="labeladj3"></label><br>
-				<input type="radio" name="adjective3" id="otheradj3">
-				<label for="otheradj3">
-					<input type="text" placeholder="Anderes Adjektiv" id="textadj3">
-				</label>
+		</div>
+		<div id="file2">
+			<h2>Hören Sie sich das zweite Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
+			<input type="text" class="file">
+			<audio controls></audio>
+			<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)</p>
+			<input type="radio" name="adjective2" required>
+			<label class="labeladj2"></label><br>
+			<input type="radio" name="adjective2">
+			<label class="labeladj2"></label><br>
+			<input type="radio" name="adjective2">
+			<label class="labeladj2"></label><br>
+			<input type="radio" name="adjective2" id="otheradj2">
+			<label for="otheradj2">
+				<input type="text" placeholder="Anderes Adjektiv" id="textadj2">
+			</label>
 
-				<p>Was ist passiert? (Verb)</p>
-				<input type="radio" name="verb3" required>
-				<label class="labelverb3"></label><br>
-				<input type="radio" name="verb3">
-				<label class="labelverb3"></label><br>
-				<input type="radio" name="verb3">
-				<label class="labelverb3"></label><br>
-				<input type="radio" name="verb3" id="otherverb3">
-				<label for="otherverb3">
-					<input type="text" placeholder="Anderes Verb" id="textverb3">
-				</label>
+			<p>Was ist passiert? (Verb)</p>
+			<input type="radio" name="verb2" required>
+			<label class="labelverb2"></label><br>
+			<input type="radio" name="verb2">
+			<label class="labelverb2"></label><br>
+			<input type="radio" name="verb2">
+			<label class="labelverb2"></label><br>
+			<input type="radio" name="verb2" id="otherverb2">
+			<label for="otherverb2">
+				<input type="text" placeholder="Anderes Verb" id="textverb2">
+			</label>
 
-				<p>Woher kam das Geräusch? (Nomen)</p>
-				<input type="radio" name="noun3" required>
-				<label class="labelnoun3"></label><br>
-				<input type="radio" name="noun3">
-				<label class="labelnoun3"></label><br>
-				<input type="radio" name="noun3">
-				<label class="labelnoun3"></label><br>
-				<input type="radio" name="noun3" id="othernoun3">
-				<label for="othernoun3">
-					<input type="text" placeholder="Anderes Nomen" id="textnoun3">
-				</label>
-			</div>
-		</form>
-		<button type="submit" form="form">Submit</button>
-	</body>
+			<p>Woher kam das Geräusch? (Nomen)</p>
+			<input type="radio" name="noun2" required>
+			<label class="labelnoun2"></label><br>
+			<input type="radio" name="noun2">
+			<label class="labelnoun2"></label><br>
+			<input type="radio" name="noun2">
+			<label class="labelnoun2"></label><br>
+			<input type="radio" name="noun2" id="othernoun2">
+			<label for="othernoun2">
+				<input type="text" placeholder="Anderes Nomen" id="textnoun2">
+			</label>
+		</div>
+		<div id="file3">
+			<h2>Hören Sie sich das dritte Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
+			<input type="text" class="file">
+			<audio controls></audio>
+			<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)</p>
+			<input type="radio" name="adjective3" required>
+			<label class="labeladj3"></label><br>
+			<input type="radio" name="adjective3">
+			<label class="labeladj3"></label><br>
+			<input type="radio" name="adjective3">
+			<label class="labeladj3"></label><br>
+			<input type="radio" name="adjective3" id="otheradj3">
+			<label for="otheradj3">
+				<input type="text" placeholder="Anderes Adjektiv" id="textadj3">
+			</label>
+
+			<p>Was ist passiert? (Verb)</p>
+			<input type="radio" name="verb3" required>
+			<label class="labelverb3"></label><br>
+			<input type="radio" name="verb3">
+			<label class="labelverb3"></label><br>
+			<input type="radio" name="verb3">
+			<label class="labelverb3"></label><br>
+			<input type="radio" name="verb3" id="otherverb3">
+			<label for="otherverb3">
+				<input type="text" placeholder="Anderes Verb" id="textverb3">
+			</label>
+
+			<p>Woher kam das Geräusch? (Nomen)</p>
+			<input type="radio" name="noun3" required>
+			<label class="labelnoun3"></label><br>
+			<input type="radio" name="noun3">
+			<label class="labelnoun3"></label><br>
+			<input type="radio" name="noun3">
+			<label class="labelnoun3"></label><br>
+			<input type="radio" name="noun3" id="othernoun3">
+			<label for="othernoun3">
+				<input type="text" placeholder="Anderes Nomen" id="textnoun3">
+			</label>
+		</div>
+	</form>
+	<button type="button" form="form">Submit</button>
+</body>
+
 </html>

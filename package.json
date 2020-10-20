@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.5.29",
+    "mongodb": "^3.6.2"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node Server/server.js"
