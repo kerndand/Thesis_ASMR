@@ -5,6 +5,8 @@
 	<title>ASMR</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="script2.js" type="text/javascript" charset="utf-8"></script>
 	<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
 	<!-- <script src="script.js" type="text/javascript" charset="utf-8"></script> -->
@@ -12,7 +14,9 @@
 
  
 <body>
+	<h1>Umfrage zum Thema ASMR</h1>
 	<form action="https://asmr-umfrage.herokuapp.com/" id="form" method="GET">
+		<h2>Persönliche Daten</h2>
 		<div id="demographics">
 			<p>Welches Geschlecht haben Sie?</p>
 			<select id="gender" name="gender" required>
@@ -153,7 +157,7 @@
 			</label>
 		</div>
 	</form>
-	<button type="submit" form="form">Submit</button>
+	<button type="submit" form="form">Abschicken</button>
 </body>
 
 </html>
