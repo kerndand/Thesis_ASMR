@@ -53,7 +53,7 @@ var ASMR_Script;
             _response.write(jsonString); */
             storeAnswer(url.query);
         }
-        _response.write("<h2>Vielen Dank für Ihre Teilnahme!</h2>");
+        _response.write("Antwort empfangen");
         _response.end();
     }
     function storeAnswer(_answer) {

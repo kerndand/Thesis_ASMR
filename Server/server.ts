@@ -53,7 +53,7 @@ export namespace ASMR_Script {
         }
 
 
-        _response.write("<h2>Vielen Dank für Ihre Teilnahme!</h2>");
+        _response.write("Antwort empfangen");
         _response.end();
     }
 
