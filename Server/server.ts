@@ -28,7 +28,7 @@ export namespace ASMR_Script {
     }
 
     async function connectToDatabase(_url: string): Promise<void> {
-        let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
+        let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
         database = mongoClient.db("ASMRDatabase").collection("Answers");
@@ -57,8 +57,8 @@ export namespace ASMR_Script {
         _response.end();
     }
 
-    function storeAnswer(_answer: Answer): void{
-        database.insertOne(_answer); 
+    function storeAnswer(_answer: Answer): void {
+        database.insertOne(_answer);
     }
 
 }
