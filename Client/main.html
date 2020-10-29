@@ -39,7 +39,7 @@
 			<input type="text" class="file">
 			<p>Bitte benutzen Sie Kopfhörer!</p>
 			<audio controls></audio>
-			<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)*</p>
+			<p>Beschreiben Sie das Geräusch mit einem Adjektiv. *</p>
 			<input type="radio" name="adjective1" required>
 			<label class="labeladj1"></label><br>
 			<input type="radio" name="adjective1">
@@ -51,7 +51,7 @@
 				<input type="text" placeholder="Anderes Adjektiv" id="textadj1">
 			</label>
 
-			<p>Was ist passiert? (Verb)*</p>
+			<p>Beschreiben Sie mit einem Verb was in dem Audio passiert ist. *</p>
 			<input type="radio" name="verb1" required>
 			<label class="labelverb1"></label><br>
 			<input type="radio" name="verb1">
@@ -63,7 +63,7 @@
 				<input type="text" placeholder="Anderes Verb" id="textverb1">
 			</label>
 
-			<p>Woher kam das Geräusch? (Nomen)*</p>
+			<p>Beschreiben Sie mit einem Nomen woher das Geräusch kam. *</p>
 			<input type="radio" name="noun1" required>
 			<label class="labelnoun1"></label><br>
 			<input type="radio" name="noun1">
@@ -80,7 +80,7 @@
 			<h2>Hören Sie sich das zweite Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
 			<input type="text" class="file">
 			<audio controls></audio>
-			<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)*</p>
+			<p>Beschreiben Sie das Geräusch mit einem Adjektiv. *</p>
 			<input type="radio" name="adjective2" required>
 			<label class="labeladj2"></label><br>
 			<input type="radio" name="adjective2">
@@ -92,7 +92,7 @@
 				<input type="text" placeholder="Anderes Adjektiv" id="textadj2">
 			</label>
 
-			<p>Was ist passiert? (Verb)*</p>
+			<p>Beschreiben Sie mit einem Verb was in dem Audio passiert ist. *</p>
 			<input type="radio" name="verb2" required>
 			<label class="labelverb2"></label><br>
 			<input type="radio" name="verb2">
@@ -104,7 +104,7 @@
 				<input type="text" placeholder="Anderes Verb" id="textverb2">
 			</label>
 
-			<p>Woher kam das Geräusch? (Nomen)*</p>
+			<p>Beschreiben Sie mit einem Nomen woher das Geräusch kam. *</p>
 			<input type="radio" name="noun2" required>
 			<label class="labelnoun2"></label><br>
 			<input type="radio" name="noun2">
@@ -120,7 +120,7 @@
 			<h2>Hören Sie sich das dritte Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
 			<input type="text" class="file">
 			<audio controls></audio>
-			<p>Wie haben Sie sich beim Hören gefühlt? (Adjektiv)*</p>
+			<p>Beschreiben Sie das Geräusch mit einem Adjektiv. *</p>
 			<input type="radio" name="adjective3" required>
 			<label class="labeladj3"></label><br>
 			<input type="radio" name="adjective3">
@@ -132,7 +132,7 @@
 				<input type="text" placeholder="Anderes Adjektiv" id="textadj3">
 			</label>
 
-			<p>Was ist passiert? (Verb)*</p>
+			<p>Beschreiben Sie mit einem Verb was in dem Audio passiert ist. *</p>
 			<input type="radio" name="verb3" required>
 			<label class="labelverb3"></label><br>
 			<input type="radio" name="verb3">
@@ -144,7 +144,7 @@
 				<input type="text" placeholder="Anderes Verb" id="textverb3">
 			</label>
 
-			<p>Woher kam das Geräusch? (Nomen)*</p>
+			<p>Beschreiben Sie mit einem Nomen woher das Geräusch kam. *</p>
 			<input type="radio" name="noun3" required>
 			<label class="labelnoun3"></label><br>
 			<input type="radio" name="noun3">
@@ -154,6 +154,20 @@
 			<input type="radio" name="noun3" id="othernoun3">
 			<label for="othernoun3">
 				<input type="text" placeholder="Anderes Nomen" id="textnoun3">
+			</label>
+		</div>
+		<div id="finish">
+			<h2>Beantworten Sie nun bitte die abschließende Frage:</h2>
+			<p>Wie haben Sie sich beim Anhören der Audios gefühlt? *</p>
+			<input type="radio" name="feeling" id="finish1" value="entspannt" required>
+			<label for="finish1" class="labelfinish">entspannt</label><br>
+			<input type="radio" name="feeling" id="finish2" value="angespannt">
+			<label for="finish2" class="labelfinish">angespannt</label><br>
+			<input type="radio" name="feeling" id="finish3" value="nervös">
+			<label for="finish3" class="labelfinish">nervös</label><br>
+			<input type="radio" name="feeling" id="otherfinish">
+			<label for="otherfinish">
+				<input type="text" placeholder="Anderes Wort" id="textfinish">
 			</label>
 		</div>
 	</form>

@@ -36,10 +36,12 @@ var ASMR_Script;
             let adjective3 = document.forms[0].adjective3.value;
             let verb3 = document.forms[0].verb3.value;
             let noun3 = document.forms[0].noun3.value;
+            let finish = document.forms[0].feeling.value;
             if (gender && age > 0 && age < 120
                 && adjective1 && adjective1 != "on" && verb1 && verb1 != "on" && noun1 && noun1 != "on"
                 && adjective2 && adjective2 != "on" && verb2 && verb2 != "on" && noun2 && noun2 != "on"
-                && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on") {
+                && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on"
+                && finish && finish != "on") {
                 let formData = new FormData(form);
                 let query = new URLSearchParams(formData);
                 let response = yield fetch(url + "?" + query.toString());
@@ -60,7 +62,8 @@ var ASMR_Script;
             }
             else if (adjective1 == "on" || verb1 == "on" || noun1 == "on"
                 || adjective2 == "on" || verb2 == "on" || noun2 == "on"
-                || adjective3 == "on" || verb3 == "on" || noun3 == "on") {
+                || adjective3 == "on" || verb3 == "on" || noun3 == "on"
+                || finish == "on") {
                 alert("Bitte stellen Sie sicher, dass das alle von Ihnen angewählten Textfelder ausgefüllt sind!");
             }
             else {

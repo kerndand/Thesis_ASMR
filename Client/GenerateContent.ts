@@ -5,21 +5,21 @@ namespace ASMR_Script {
 
     // Multidimensionale Arrays mit Daten für die Radio-Buttons
     let adjArrays = [
-        ["adj1.1", "adj1.2", "adj1.3", "adj1.4", "adj1.5", "adj1.6", "adj1.7", "adj1.8", "adj1.9", "adj1.10"],
-        ["adj2.1", "adj2.2", "adj2.3", "adj2.4", "adj2.5", "adj2.6", "adj2.7", "adj2.8", "adj2.9", "adj2.10"],
-        ["adj3.1", "adj3.2", "adj3.3", "adj3.4", "adj3.5", "adj3.6", "adj3.7", "adj3.8", "adj3.9", "adj3.10"]
+        ["eklig", "anspannend", "unangenehm", "entspannend", "rhytmisch", "hart", "kalt", "pulsierend", "nass", "unruhig"],
+        ["unangenehm", "warm", "ruhig", "schrill", "dumpf", "regelmäßig", "entspannend", "ruhig", "beruhigend", "entspannend"],
+        ["feucht", "nah", "gleichmäßig", "ruhig", "erdrückend", "langsam", "erdrückend", "angenehm", "hoch", "rau"]
     ];
 
     let verbArrays = [
-        ["verb1.1", "verb1.2", "verb1.3", "verb1.4", "verb1.5", "verb1.6", "verb1.7", "verb1.8", "verb1.9", "verb1.10"],
-        ["verb2.1", "verb2.2", "verb2.3", "verb2.4", "verb2.5", "verb2.6", "verb2.7", "verb2.8", "verb2.9", "verb2.10"],
-        ["verb3.1", "verb3.2", "verb3.3", "verb3.4", "verb3.5", "verb3.6", "verb3.7", "verb3.8", "verb3.9", "verb3.10"]
+        ["essen", "eincremen", "knistern", "rauschen", "laufen", "laufen", "rauschen", "fließen", "tröpfeln", "streicheln"],
+        ["schmatzen", "reiben", "wühlen", "rascheln", "rieseln", "knistern", "atmen", "tauchen", "regnen", "kratzen"],
+        ["lecken", "putzen", "aufräumen", "regnen", "klettern", "quetschen", "segeln", "schütteln", "plätschern", "fegen"]
     ];
 
     let nounArrays = [
-        ["noun1.1", "noun1.2", "noun1.3", "noun1.4", "noun1.5", "noun1.6", "noun1.7", "noun1.8", "noun1.9", "noun1.10"],
-        ["noun2.1", "noun2.2", "noun2.3", "noun2.4", "noun2.5", "noun2.6", "noun2.7", "noun2.8", "noun2.9", "noun2.10"],
-        ["noun3.1", "noun3.2", "noun3.3", "noun3.4", "noun3.5", "noun3.6", "noun3.7", "noun3.8", "noun3.9", "noun3.10"]
+        ["Mensch", "Massage", "Müllsack", "Wald", "Kies", "Mensch", "Wind", "Lavalampe", "Teich", "Haare"],
+        ["Speichel", "Mensch", "Laub", "Wind", "Schritte", "Schotter", "Wetter", "Flasche", "Regenrinne", "Besen"],
+        ["Mund", "Haut", "Plastik", "Blätter", "Mensch", "Schnee", "Ventilator", "Flüssigkeit", "Wasser", "Badezimmer"]
     ];
 
     export function generateContent(): void {
@@ -36,13 +36,55 @@ namespace ASMR_Script {
 
 
             let source: HTMLSourceElement = document.createElement("source");
-            source.setAttribute("src", "../audio/file" + JSON.stringify(random + 1) + ".mp3");
-            source.setAttribute("type", "audio/mpeg");
+            source.setAttribute("src", "../audio/file" + JSON.stringify(random + 1) + ".wav");
+            source.setAttribute("type", "audio/wav");
             source.setAttribute("name", "file" + JSON.stringify(random + 1));
             audio[i].appendChild(source);
             let file: HTMLCollectionOf<Element> = document.getElementsByClassName("file");
             file[i].setAttribute("name", "file" + JSON.stringify(i + 1));
-            file[i].setAttribute("value", "file" + JSON.stringify(random + 1));
+            //file[i].setAttribute("value", "file" + JSON.stringify(random + 1));
+            switch (random + 1) {
+                case 1:
+                    file[i].setAttribute("value", "Schmatzen");
+                    break;
+
+                case 2:
+                    file[i].setAttribute("value", "Haut");
+                    break;
+
+                case 3:
+                    file[i].setAttribute("value", "Plastiktüte");
+                    break;
+
+                case 4:
+                    file[i].setAttribute("value", "Filmband");
+                    break;
+
+                case 5:
+                    file[i].setAttribute("value", "Steinchen");
+                    break;
+
+                case 6:
+                    file[i].setAttribute("value", "Mehlsack");
+                    break;
+
+                case 7:
+                    file[i].setAttribute("value", "Pusten");
+                    break;
+
+                case 8:
+                    file[i].setAttribute("value", "Sirup");
+                    break;
+
+                case 9:
+                    file[i].setAttribute("value", "Wasser");
+                    break;
+
+                case 10:
+                    file[i].setAttribute("value", "Haarbürste");
+                    break;
+
+            }
         }
 
 
@@ -50,10 +92,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("adjective1");
             input[i].setAttribute("value", adjArrays[i][numberQuestions[0]]);
-            input[i].setAttribute("id", adjArrays[i][numberQuestions[0]]);
+            input[i].setAttribute("id", adjArrays[i][numberQuestions[0]] + "1");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labeladj1");
-            label[i].setAttribute("for", adjArrays[i][numberQuestions[0]]);
+            label[i].setAttribute("for", adjArrays[i][numberQuestions[0]] + "1");
             label[i].innerHTML = adjArrays[i][numberQuestions[0]];
         };
 
@@ -78,10 +120,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("verb1");
             input[i].setAttribute("value", verbArrays[i][numberQuestions[0]]);
-            input[i].setAttribute("id", verbArrays[i][numberQuestions[0]]);
+            input[i].setAttribute("id", verbArrays[i][numberQuestions[0]] + "1");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labelverb1");
-            label[i].setAttribute("for", verbArrays[i][numberQuestions[0]]);
+            label[i].setAttribute("for", verbArrays[i][numberQuestions[0]] + "1");
             label[i].innerHTML = verbArrays[i][numberQuestions[0]];
         };
 
@@ -106,10 +148,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("noun1");
             input[i].setAttribute("value", nounArrays[i][numberQuestions[0]]);
-            input[i].setAttribute("id", nounArrays[i][numberQuestions[0]]);
+            input[i].setAttribute("id", nounArrays[i][numberQuestions[0]] + "1");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labelnoun1");
-            label[i].setAttribute("for", nounArrays[i][numberQuestions[0]]);
+            label[i].setAttribute("for", nounArrays[i][numberQuestions[0]] + "1");
             label[i].innerHTML = nounArrays[i][numberQuestions[0]];
         };
 
@@ -134,10 +176,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("adjective2");
             input[i].setAttribute("value", adjArrays[i][numberQuestions[1]]);
-            input[i].setAttribute("id", adjArrays[i][numberQuestions[1]]);
+            input[i].setAttribute("id", adjArrays[i][numberQuestions[1]] + "2");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labeladj2");
-            label[i].setAttribute("for", adjArrays[i][numberQuestions[1]]);
+            label[i].setAttribute("for", adjArrays[i][numberQuestions[1]] + "2");
             label[i].innerHTML = adjArrays[i][numberQuestions[1]];
         };
 
@@ -162,10 +204,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("verb2");
             input[i].setAttribute("value", verbArrays[i][numberQuestions[1]]);
-            input[i].setAttribute("id", verbArrays[i][numberQuestions[1]]);
+            input[i].setAttribute("id", verbArrays[i][numberQuestions[1]] + "2");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labelverb2");
-            label[i].setAttribute("for", verbArrays[i][numberQuestions[1]]);
+            label[i].setAttribute("for", verbArrays[i][numberQuestions[1]] + "2");
             label[i].innerHTML = verbArrays[i][numberQuestions[1]];
         };
 
@@ -190,10 +232,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("noun2");
             input[i].setAttribute("value", nounArrays[i][numberQuestions[1]]);
-            input[i].setAttribute("id", nounArrays[i][numberQuestions[1]]);
+            input[i].setAttribute("id", nounArrays[i][numberQuestions[1]] + "2");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labelnoun2");
-            label[i].setAttribute("for", nounArrays[i][numberQuestions[1]]);
+            label[i].setAttribute("for", nounArrays[i][numberQuestions[1]] + "2");
             label[i].innerHTML = nounArrays[i][numberQuestions[1]];
         };
 
@@ -218,10 +260,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("adjective3");
             input[i].setAttribute("value", adjArrays[i][numberQuestions[2]]);
-            input[i].setAttribute("id", adjArrays[i][numberQuestions[2]]);
+            input[i].setAttribute("id", adjArrays[i][numberQuestions[2]] + "3");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labeladj3");
-            label[i].setAttribute("for", adjArrays[i][numberQuestions[2]]);
+            label[i].setAttribute("for", adjArrays[i][numberQuestions[2]] + "3");
             label[i].innerHTML = adjArrays[i][numberQuestions[2]];
         };
 
@@ -246,10 +288,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("verb3");
             input[i].setAttribute("value", verbArrays[i][numberQuestions[2]]);
-            input[i].setAttribute("id", verbArrays[i][numberQuestions[2]]);
+            input[i].setAttribute("id", verbArrays[i][numberQuestions[2]] + "3");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labelverb3");
-            label[i].setAttribute("for", verbArrays[i][numberQuestions[2]]);
+            label[i].setAttribute("for", verbArrays[i][numberQuestions[2]] + "3");
             label[i].innerHTML = verbArrays[i][numberQuestions[2]];
         };
 
@@ -274,10 +316,10 @@ namespace ASMR_Script {
         for (let i: number = 0; i < 3; i++) {
             let input: NodeListOf<HTMLElement> = document.getElementsByName("noun3");
             input[i].setAttribute("value", nounArrays[i][numberQuestions[2]]);
-            input[i].setAttribute("id", nounArrays[i][numberQuestions[2]]);
+            input[i].setAttribute("id", nounArrays[i][numberQuestions[2]] + "3");
 
             let label: HTMLCollectionOf<Element> = document.getElementsByClassName("labelnoun3");
-            label[i].setAttribute("for", nounArrays[i][numberQuestions[2]]);
+            label[i].setAttribute("for", nounArrays[i][numberQuestions[2]] + "3");
             label[i].innerHTML = nounArrays[i][numberQuestions[2]];
         };
 
@@ -295,6 +337,25 @@ namespace ASMR_Script {
 
             if (inputNoun3.checked == true) {
                 inputNoun3.value = textNoun3.value;
+            };
+        };
+
+        // Letzte Frage
+
+        document.getElementById("textfinish").onclick = checkRadioFinish;
+        document.getElementById("textfinish").onchange = radioValueFinish;
+
+        function checkRadioFinish(): void {
+            let inputFinish: HTMLInputElement = <HTMLInputElement>document.getElementById("otherfinish");
+            inputFinish.checked = true;
+        }
+
+        function radioValueFinish(): void {
+            let inputFinish: HTMLInputElement = <HTMLInputElement>document.getElementById("otherfinish");
+            let textFinish: HTMLInputElement = <HTMLInputElement>document.getElementById("textfinish");
+
+            if (inputFinish.checked == true) {
+                inputFinish.value = textFinish.value;
             };
         };
 
