@@ -23,6 +23,9 @@ namespace ASMR_Script {
     async function sendForms(): Promise<void> {
         let gender = document.forms[0].gender.value;
         let age = document.forms[0].age.value;
+        let expertise = document.forms[0].expertise.value;
+        let asmr = document.forms[0].asmr.value;
+        let hearingdamage= document.forms[0].hearingdamage.value;
         let adjective1 = document.forms[0].adjective1.value;
         let verb1 = document.forms[0].verb1.value;
         let noun1 = document.forms[0].noun1.value;
@@ -34,12 +37,13 @@ namespace ASMR_Script {
         let noun3 = document.forms[0].noun3.value;
         let finish = document.forms[0].feeling.value;
 
-        if (gender && age > 0 && age < 120
+        if (gender && age > 0 && age < 120 && expertise && asmr && hearingdamage
             && adjective1 && adjective1 != "on" && verb1 && verb1 != "on" && noun1 && noun1 != "on"
             && adjective2 && adjective2 != "on" && verb2 && verb2 != "on" && noun2 && noun2 != "on"
             && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on"
             && finish && finish != "on") {
-
+            
+            submit.innerHTML = "Bitte Warten";
             let formData: FormData = new FormData(form);
             let query: URLSearchParams = new URLSearchParams(<any>formData);
             let response: Response = await fetch(url + "?" + query.toString());
@@ -69,7 +73,7 @@ namespace ASMR_Script {
 
         } else {
 
-            alert("Bitte füllen Sie alle mit * gekennzeichneten Felder aus!")
+            alert("Bitte füllen Sie alle Felder aus!")
 
         }
     }

@@ -17,7 +17,7 @@
 	<form id="form" name="myForm" method="GET">
 		<h2>Persönliche Daten</h2>
 		<div id="demographics">
-			<p>Welches Geschlecht haben Sie?*</p>
+			<p>Geben Sie bitte Ihr Geschlecht an.</p>
 			<select id="gender" name="gender" required>
 				<option value="" disabled selected>Wähle ein Geschlecht</option>
 				<option value="männlich">Männlich</option>
@@ -25,21 +25,52 @@
 				<option value="divers">Divers</option>
 			</select><br>
 
-			<p>Wie alt sind Sie?*</p>
+			<p>Wie alt sind Sie?</p>
 			<input type="number" id="age" name="age" min="1" max="120" required />
 
 			<p>Zusätzliche Informationen</p>
-			<input type="checkbox" name="info" id="experte" value="experte" />
+			<table>
+				<tr>
+					<th></th>
+					<th>trifft zu</th>
+					<th>trifft eher zu</th>
+					<th>trifft eher nicht zu</th>
+					<th>trifft nicht zu</th>
+				</tr>
+				<tr>
+					<td class="first">Ich habe Expertise im Bereich Audio</td>
+					<td><input type="radio" name="expertise" value="trifft zu"></td>
+					<td><input type="radio" name="expertise" value="trifft eher zu"></td>
+					<td><input type="radio" name="expertise" value="trifft eher nicht zu"></td>
+					<td><input type="radio" name="expertise" value="trifft nicht zu"></td>
+				</tr>
+				<tr>
+					<td class="first">Ich habe mich mit ASMR beschäftigt</td>
+					<td><input type="radio" name="asmr" value="trifft zu"></td>
+					<td><input type="radio" name="asmr" value="trifft eher zu"></td>
+					<td><input type="radio" name="asmr" value="trifft eher nicht zu"></td>
+					<td><input type="radio" name="asmr" value="trifft nicht zu"></td>
+				</tr>
+				<tr>
+					<td class="first">Ich habe einen Gehörschaden</td>
+					<td><input type="radio" name="hearingdamage" value="trifft zu"></td>
+					<td><input type="radio" name="hearingdamage" value="trifft eher zu"></td>
+					<td><input type="radio" name="hearingdamage" value="trifft eher nicht zu"></td>
+					<td><input type="radio" name="hearingdamage" value="trifft nicht zu"></td>
+				</tr>
+			</table>
+
+			<!-- <input type="checkbox" name="info" id="experte" value="experte" />
 			<label for="experte">Ich kenne mich im Bereich Audio aus</label><br>
 			<input type="checkbox" name="info" id="hear" value="hearingdamage">
-			<label for="hear">Ich habe einen Gehörschaden</label>
+			<label for="hear">Ich habe einen Gehörschaden</label> -->
 		</div>
 		<div id="file1">
 			<h2>Hören Sie sich das erste Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
 			<input type="text" class="file">
 			<p>Bitte benutzen Sie Kopfhörer!</p>
 			<audio controls></audio>
-			<p>Beschreiben Sie das Geräusch mit einem Adjektiv. *</p>
+			<p>Wählen Sie ein Adjektiv, dass den Klang am besten beschreibt.</p>
 			<input type="radio" name="adjective1" required>
 			<label class="labeladj1"></label><br>
 			<input type="radio" name="adjective1">
@@ -51,7 +82,7 @@
 				<input type="text" placeholder="Anderes Adjektiv" id="textadj1">
 			</label>
 
-			<p>Beschreiben Sie mit einem Verb was in dem Audio passiert ist. *</p>
+			<p>Wählen Sie ein Verb, dass die Entstehung des Klangs am besten beschreibt.</p>
 			<input type="radio" name="verb1" required>
 			<label class="labelverb1"></label><br>
 			<input type="radio" name="verb1">
@@ -63,7 +94,7 @@
 				<input type="text" placeholder="Anderes Verb" id="textverb1">
 			</label>
 
-			<p>Beschreiben Sie mit einem Nomen woher das Geräusch kam. *</p>
+			<p>Wählen Sie ein Substantiv, dass die Klangquelle am besten beschreibt.</p>
 			<input type="radio" name="noun1" required>
 			<label class="labelnoun1"></label><br>
 			<input type="radio" name="noun1">
@@ -72,7 +103,7 @@
 			<label class="labelnoun1"></label><br>
 			<input type="radio" name="noun1" id="othernoun1">
 			<label for="othernoun1">
-				<input type="text" placeholder="Anderes Nomen" id="textnoun1">
+				<input type="text" placeholder="Anderes Substantiv" id="textnoun1">
 			</label>
 
 		</div>
@@ -80,7 +111,7 @@
 			<h2>Hören Sie sich das zweite Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
 			<input type="text" class="file">
 			<audio controls></audio>
-			<p>Beschreiben Sie das Geräusch mit einem Adjektiv. *</p>
+			<p>Wählen Sie ein Adjektiv, dass den Klang am besten beschreibt.</p>
 			<input type="radio" name="adjective2" required>
 			<label class="labeladj2"></label><br>
 			<input type="radio" name="adjective2">
@@ -92,7 +123,7 @@
 				<input type="text" placeholder="Anderes Adjektiv" id="textadj2">
 			</label>
 
-			<p>Beschreiben Sie mit einem Verb was in dem Audio passiert ist. *</p>
+			<p>Wählen Sie ein Verb, dass die Entstehung des Klangs am besten beschreibt.</p>
 			<input type="radio" name="verb2" required>
 			<label class="labelverb2"></label><br>
 			<input type="radio" name="verb2">
@@ -104,7 +135,7 @@
 				<input type="text" placeholder="Anderes Verb" id="textverb2">
 			</label>
 
-			<p>Beschreiben Sie mit einem Nomen woher das Geräusch kam. *</p>
+			<p>Wählen Sie ein Substantiv, dass die Klangquelle am besten beschreibt.</p>
 			<input type="radio" name="noun2" required>
 			<label class="labelnoun2"></label><br>
 			<input type="radio" name="noun2">
@@ -113,14 +144,14 @@
 			<label class="labelnoun2"></label><br>
 			<input type="radio" name="noun2" id="othernoun2">
 			<label for="othernoun2">
-				<input type="text" placeholder="Anderes Nomen" id="textnoun2">
+				<input type="text" placeholder="Anderes Substantiv" id="textnoun2">
 			</label>
 		</div>
 		<div id="file3">
 			<h2>Hören Sie sich das dritte Audio an und beantworten Sie die dazugehörigen Fragen:</h2>
 			<input type="text" class="file">
 			<audio controls></audio>
-			<p>Beschreiben Sie das Geräusch mit einem Adjektiv. *</p>
+			<p>Wählen Sie ein Adjektiv, dass den Klang am besten beschreibt.</p>
 			<input type="radio" name="adjective3" required>
 			<label class="labeladj3"></label><br>
 			<input type="radio" name="adjective3">
@@ -132,7 +163,7 @@
 				<input type="text" placeholder="Anderes Adjektiv" id="textadj3">
 			</label>
 
-			<p>Beschreiben Sie mit einem Verb was in dem Audio passiert ist. *</p>
+			<p>Wählen Sie ein Verb, dass die Entstehung des Klangs am besten beschreibt.</p>
 			<input type="radio" name="verb3" required>
 			<label class="labelverb3"></label><br>
 			<input type="radio" name="verb3">
@@ -144,7 +175,7 @@
 				<input type="text" placeholder="Anderes Verb" id="textverb3">
 			</label>
 
-			<p>Beschreiben Sie mit einem Nomen woher das Geräusch kam. *</p>
+			<p>Wählen Sie ein Substantiv, dass die Klangquelle am besten beschreibt.</p>
 			<input type="radio" name="noun3" required>
 			<label class="labelnoun3"></label><br>
 			<input type="radio" name="noun3">
@@ -153,12 +184,12 @@
 			<label class="labelnoun3"></label><br>
 			<input type="radio" name="noun3" id="othernoun3">
 			<label for="othernoun3">
-				<input type="text" placeholder="Anderes Nomen" id="textnoun3">
+				<input type="text" placeholder="Anderes Substantiv" id="textnoun3">
 			</label>
 		</div>
 		<div id="finish">
 			<h2>Beantworten Sie nun bitte die abschließende Frage:</h2>
-			<p>Wie haben Sie sich beim Anhören der Audios gefühlt? *</p>
+			<p>Mit welchem Wort würden Sie die gesamte Erfahrung der Klänge beschreiben?</p>
 			<input type="radio" name="feeling" id="finish1" value="entspannt" required>
 			<label for="finish1" class="labelfinish">entspannt</label><br>
 			<input type="radio" name="feeling" id="finish2" value="angespannt">

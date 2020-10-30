@@ -27,6 +27,9 @@ var ASMR_Script;
         return __awaiter(this, void 0, void 0, function* () {
             let gender = document.forms[0].gender.value;
             let age = document.forms[0].age.value;
+            let expertise = document.forms[0].expertise.value;
+            let asmr = document.forms[0].asmr.value;
+            let hearingdamage = document.forms[0].hearingdamage.value;
             let adjective1 = document.forms[0].adjective1.value;
             let verb1 = document.forms[0].verb1.value;
             let noun1 = document.forms[0].noun1.value;
@@ -37,11 +40,12 @@ var ASMR_Script;
             let verb3 = document.forms[0].verb3.value;
             let noun3 = document.forms[0].noun3.value;
             let finish = document.forms[0].feeling.value;
-            if (gender && age > 0 && age < 120
+            if (gender && age > 0 && age < 120 && expertise && asmr && hearingdamage
                 && adjective1 && adjective1 != "on" && verb1 && verb1 != "on" && noun1 && noun1 != "on"
                 && adjective2 && adjective2 != "on" && verb2 && verb2 != "on" && noun2 && noun2 != "on"
                 && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on"
                 && finish && finish != "on") {
+                submit.innerHTML = "Bitte Warten";
                 let formData = new FormData(form);
                 let query = new URLSearchParams(formData);
                 let response = yield fetch(url + "?" + query.toString());
@@ -67,7 +71,7 @@ var ASMR_Script;
                 alert("Bitte stellen Sie sicher, dass das alle von Ihnen angewählten Textfelder ausgefüllt sind!");
             }
             else {
-                alert("Bitte füllen Sie alle mit * gekennzeichneten Felder aus!");
+                alert("Bitte füllen Sie alle Felder aus!");
             }
         });
     }
