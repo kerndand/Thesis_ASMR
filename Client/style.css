@@ -19,12 +19,17 @@ hr{
     height: 1px;
 }
 
+span{
+    padding: 2px;
+    display: inline-block;
+}
+
 #headphones{
     color: red;
     font-size: 24px;
 }
 
-div{
+#file1, #file2, #file3{
     margin-top: 2em;
     margin-bottom: 2em;
 }
@@ -80,7 +85,7 @@ button:hover{
 
 .first {
     text-align: left;
-    padding-left: 0;
+    padding-left: 2px;
 }
 
 td, th {

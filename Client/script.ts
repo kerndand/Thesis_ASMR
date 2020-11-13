@@ -59,29 +59,165 @@ namespace ASMR_Script {
             thx.innerHTML = "Vielen Dank für Ihre Teilnahme. Sie können den Browser nun schließen.";
             thx.style.textAlign = "center";
             document.querySelector("body").appendChild(thx);
-        } else if (!gender) {
-
-            alert("Bitte geben Sie Ihr Geschlecht an!");
-
-        } else if (age == "" || age < 0 || age > 120) {
-
-            alert("Bitte geben Sie ein Alter zwischen 1 und 120 an!");
-
-        } else if (!feeling1 || !feeling2 || !feeling3 || !generalFeeling){
-
-            alert("Bitte nennen Sie Ihre Empfindung beim Anhören der Klänge!")
-
-        } else if (adjective1 == "on" || verb1 == "on" || noun1 == "on"
-            || adjective2 == "on" || verb2 == "on" || noun2 == "on"
-            || adjective3 == "on" || verb3 == "on" || noun3 == "on") {
-
-            alert("Bitte stellen Sie sicher, dass alle von Ihnen ausgewählten Textfelder ausgefüllt sind!");
-
-        } else {
-
-            alert("Bitte füllen Sie alle Felder aus!")
-
+        } else{
+            alert("Bitte füllen Sie alle Felder aus! Fehlende Felder sind rot markiert.")
         }
+
+        if (!gender){
+            document.getElementById("gender").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("gender").style.backgroundColor = "white";
+        }
+
+        if (!age || age < 0 || age > 120){
+            document.getElementById("age").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("age").style.backgroundColor = "white";
+        }
+
+        if (!expertise){
+            document.getElementById("expertise").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("expertise").style.backgroundColor = "white";
+        }
+
+        if (!asmr){
+            document.getElementById("asmr").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("asmr").style.backgroundColor = "white";
+        }
+
+        if (!feeling1){
+            document.getElementById("feeling1").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("feeling1").style.backgroundColor = "white";
+        }
+
+        if (!feeling2){
+            document.getElementById("feeling2").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("feeling2").style.backgroundColor = "white";
+        }
+
+        if (!feeling3){
+            document.getElementById("feeling3").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("feeling3").style.backgroundColor = "white";
+        }
+
+        if (!generalFeeling){
+            document.getElementById("generalFeeling").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("generalFeeling").style.backgroundColor = "white";
+        }
+
+        if (!adjective1){
+            document.getElementById("markAdj1").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markAdj1").style.backgroundColor = "white";
+        } 
+
+        if (adjective1 == "on"){
+            document.getElementById("textadj1").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textadj1").style.backgroundColor = "white";
+        } 
+
+        if (!adjective2){
+            document.getElementById("markAdj2").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markAdj2").style.backgroundColor = "white";
+        } 
+        
+        if (adjective2 == "on"){
+            document.getElementById("textadj2").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textadj2").style.backgroundColor = "white";
+        } 
+
+        if (!adjective3){
+            document.getElementById("markAdj3").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markAdj3").style.backgroundColor = "white";
+        } 
+        
+        if (adjective3 == "on"){
+            document.getElementById("textadj3").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textadj3").style.backgroundColor = "white";
+        } 
+
+        if (!verb1){
+            document.getElementById("markVerb1").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markVerb1").style.backgroundColor = "white";
+        } 
+        
+        if (verb1 == "on"){
+            document.getElementById("textverb1").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textverb1").style.backgroundColor = "white";
+        } 
+
+        if (!verb2){
+            document.getElementById("markVerb2").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markVerb2").style.backgroundColor = "white";
+        } 
+        
+        if (verb2 == "on"){
+            document.getElementById("textverb2").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textverb2").style.backgroundColor = "white";
+        } 
+
+        if (!verb3){
+            document.getElementById("markVerb3").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markVerb3").style.backgroundColor = "white";
+        } 
+        
+        if (verb3 == "on"){
+            document.getElementById("textverb3").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textverb3").style.backgroundColor = "white";
+        } 
+
+        if (!noun1){
+            document.getElementById("markNoun1").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markNoun1").style.backgroundColor = "white";
+        } 
+        
+        if (noun1 == "on"){
+            document.getElementById("textnoun1").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textnoun1").style.backgroundColor = "white";
+        } 
+
+        if (!noun2){
+            document.getElementById("markNoun2").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markNoun2").style.backgroundColor = "white";
+        } 
+        
+        if (noun2 == "on"){
+            document.getElementById("textnoun2").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textnoun2").style.backgroundColor = "white";
+        } 
+
+        if (!noun3){
+            document.getElementById("markNoun3").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("markNoun3").style.backgroundColor = "white";
+        } 
+        
+        if (noun3 == "on"){
+            document.getElementById("textnoun3").style.backgroundColor = "rgb(255, 0, 0, 0.25)";
+        } else {
+            document.getElementById("textnoun3").style.backgroundColor = "white";
+        } 
     }
 
     // Stop audio when other starts
