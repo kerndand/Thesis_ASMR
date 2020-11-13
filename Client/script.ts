@@ -25,23 +25,26 @@ namespace ASMR_Script {
         let age = document.forms[0].age.value;
         let expertise = document.forms[0].expertise.value;
         let asmr = document.forms[0].asmr.value;
-        let hearingdamage= document.forms[0].hearingdamage.value;
+        let feeling1 = document.forms[0].feeling1.value;
         let adjective1 = document.forms[0].adjective1.value;
         let verb1 = document.forms[0].verb1.value;
         let noun1 = document.forms[0].noun1.value;
+        let feeling2 = document.forms[0].feeling2.value;
         let adjective2 = document.forms[0].adjective2.value;
         let verb2 = document.forms[0].verb2.value;
         let noun2 = document.forms[0].noun2.value;
+        let feeling3 = document.forms[0].feeling3.value;
         let adjective3 = document.forms[0].adjective3.value;
         let verb3 = document.forms[0].verb3.value;
         let noun3 = document.forms[0].noun3.value;
-        let finish = document.forms[0].feeling.value;
+        let generalFeeling = document.forms[0].generalFeeling.value;
 
-        if (gender && age > 0 && age < 120 && expertise && asmr && hearingdamage
-            && adjective1 && adjective1 != "on" && verb1 && verb1 != "on" && noun1 && noun1 != "on"
-            && adjective2 && adjective2 != "on" && verb2 && verb2 != "on" && noun2 && noun2 != "on"
-            && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on"
-            && finish && finish != "on") {
+
+        if (gender && age > 0 && age < 120 && expertise && asmr
+            && feeling1 && adjective1 && adjective1 != "on" && verb1 && verb1 != "on" && noun1 && noun1 != "on"
+            && feeling2 && adjective2 && adjective2 != "on" && verb2 && verb2 != "on" && noun2 && noun2 != "on"
+            && feeling3 && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on" 
+            && generalFeeling) {
             
             submit.innerHTML = "Bitte Warten";
             let formData: FormData = new FormData(form);
@@ -64,10 +67,13 @@ namespace ASMR_Script {
 
             alert("Bitte geben Sie ein Alter zwischen 1 und 120 an!");
 
+        } else if (feeling1 == "" || feeling2 == "" || feeling3 == "" || generalFeeling == ""){
+
+            alert("Bitte nennen Sie Ihre Empfindung beim Anhören der Klänge!")
+
         } else if (adjective1 == "on" || verb1 == "on" || noun1 == "on"
             || adjective2 == "on" || verb2 == "on" || noun2 == "on"
-            || adjective3 == "on" || verb3 == "on" || noun3 == "on"
-            || finish == "on") {
+            || adjective3 == "on" || verb3 == "on" || noun3 == "on") {
 
             alert("Bitte stellen Sie sicher, dass das alle von Ihnen angewählten Textfelder ausgefüllt sind!");
 

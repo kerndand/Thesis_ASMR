@@ -339,25 +339,5 @@ namespace ASMR_Script {
                 inputNoun3.value = textNoun3.value;
             };
         };
-
-        // Letzte Frage
-
-        document.getElementById("textfinish").onclick = checkRadioFinish;
-        document.getElementById("textfinish").onchange = radioValueFinish;
-
-        function checkRadioFinish(): void {
-            let inputFinish: HTMLInputElement = <HTMLInputElement>document.getElementById("otherfinish");
-            inputFinish.checked = true;
-        }
-
-        function radioValueFinish(): void {
-            let inputFinish: HTMLInputElement = <HTMLInputElement>document.getElementById("otherfinish");
-            let textFinish: HTMLInputElement = <HTMLInputElement>document.getElementById("textfinish");
-
-            if (inputFinish.checked == true) {
-                inputFinish.value = textFinish.value;
-            };
-        };
-
     }
 }

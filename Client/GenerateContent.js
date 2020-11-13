@@ -294,22 +294,6 @@ var ASMR_Script;
             ;
         }
         ;
-        // Letzte Frage
-        document.getElementById("textfinish").onclick = checkRadioFinish;
-        document.getElementById("textfinish").onchange = radioValueFinish;
-        function checkRadioFinish() {
-            let inputFinish = document.getElementById("otherfinish");
-            inputFinish.checked = true;
-        }
-        function radioValueFinish() {
-            let inputFinish = document.getElementById("otherfinish");
-            let textFinish = document.getElementById("textfinish");
-            if (inputFinish.checked == true) {
-                inputFinish.value = textFinish.value;
-            }
-            ;
-        }
-        ;
     }
     ASMR_Script.generateContent = generateContent;
 })(ASMR_Script || (ASMR_Script = {}));
