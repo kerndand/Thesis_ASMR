@@ -12,8 +12,13 @@ h1{
     text-align: center;
 }
 
-h2{
+hr{
+    color: black;
+}
+
+div{
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 audio{
