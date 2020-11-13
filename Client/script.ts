@@ -75,7 +75,7 @@ namespace ASMR_Script {
             || adjective2 == "on" || verb2 == "on" || noun2 == "on"
             || adjective3 == "on" || verb3 == "on" || noun3 == "on") {
 
-            alert("Bitte stellen Sie sicher, dass alle von Ihnen angewählten Textfelder ausgefüllt sind!");
+            alert("Bitte stellen Sie sicher, dass alle von Ihnen ausgewählten Textfelder ausgefüllt sind!");
 
         } else {
 

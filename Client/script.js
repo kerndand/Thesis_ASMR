@@ -72,7 +72,7 @@ var ASMR_Script;
             else if (adjective1 == "on" || verb1 == "on" || noun1 == "on"
                 || adjective2 == "on" || verb2 == "on" || noun2 == "on"
                 || adjective3 == "on" || verb3 == "on" || noun3 == "on") {
-                alert("Bitte stellen Sie sicher, dass alle von Ihnen angewählten Textfelder ausgefüllt sind!");
+                alert("Bitte stellen Sie sicher, dass alle von Ihnen ausgewählten Textfelder ausgefüllt sind!");
             }
             else {
                 alert("Bitte füllen Sie alle Felder aus!");
