@@ -66,13 +66,13 @@ var ASMR_Script;
             else if (age == "" || age < 0 || age > 120) {
                 alert("Bitte geben Sie ein Alter zwischen 1 und 120 an!");
             }
-            else if (feeling1 == "" || feeling2 == "" || feeling3 == "" || generalFeeling == "") {
+            else if (!feeling1 || !feeling2 || !feeling3 || !generalFeeling) {
                 alert("Bitte nennen Sie Ihre Empfindung beim Anhören der Klänge!");
             }
             else if (adjective1 == "on" || verb1 == "on" || noun1 == "on"
                 || adjective2 == "on" || verb2 == "on" || noun2 == "on"
                 || adjective3 == "on" || verb3 == "on" || noun3 == "on") {
-                alert("Bitte stellen Sie sicher, dass das alle von Ihnen angewählten Textfelder ausgefüllt sind!");
+                alert("Bitte stellen Sie sicher, dass alle von Ihnen angewählten Textfelder ausgefüllt sind!");
             }
             else {
                 alert("Bitte füllen Sie alle Felder aus!");
