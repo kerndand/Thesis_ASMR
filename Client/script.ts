@@ -46,7 +46,8 @@ namespace ASMR_Script {
             && feeling3 && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on" 
             && generalFeeling) {
             
-            submit.innerHTML = "Bitte Warten";
+            submit.style.display = "none";
+            document.getElementById("wait").style.display = "block";
             let formData: FormData = new FormData(form);
             let query: URLSearchParams = new URLSearchParams(<any>formData);
             let response: Response = await fetch(url + "?" + query.toString());
@@ -54,7 +55,7 @@ namespace ASMR_Script {
             console.log(responseText);
 
             form.style.display = "none";
-            submit.style.display = "none";
+            document.getElementById("wait").style.display ="none";
             let thx: HTMLHeadingElement = document.createElement("h2");
             thx.innerHTML = "Vielen Dank für Ihre Teilnahme. Sie können den Browser nun schließen.";
             thx.style.textAlign = "center";

@@ -34,6 +34,12 @@ span{
     margin-bottom: 2em;
 }
 
+#wait{
+    display: none;
+    font-size: 32px;
+    text-align: center;
+}
+
 audio{
     margin-top: 1em;
 }
