@@ -47,15 +47,15 @@ var ASMR_Script;
                 && feeling2 && adjective2 && adjective2 != "on" && verb2 && verb2 != "on" && noun2 && noun2 != "on"
                 && feeling3 && adjective3 && adjective3 != "on" && verb3 && verb3 != "on" && noun3 && noun3 != "on"
                 && generalFeeling) {
-                submit.style.display = "none";
-                document.getElementById("wait").style.display = "block";
+                submit.disabled = true;
+                submit.innerHTML = "Bitte warten!";
                 let formData = new FormData(form);
                 let query = new URLSearchParams(formData);
                 let response = yield fetch(url + "?" + query.toString());
                 let responseText = yield response.text();
                 console.log(responseText);
                 form.style.display = "none";
-                document.getElementById("wait").style.display = "none";
+                submit.style.display = "none";
                 let thx = document.createElement("h2");
                 thx.innerHTML = "Vielen Dank für Ihre Teilnahme. Sie können den Browser nun schließen.";
                 thx.style.textAlign = "center";
