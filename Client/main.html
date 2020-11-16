@@ -14,6 +14,28 @@
 
 <body>
 	<h1>Umfrage zum Thema ASMR</h1>
+	<div id="introduction">
+		<p>Liebe/r Teilnehmer/in,</p>
+		<p>
+			mein Name ist Daniel Kern. Zurzeit studiere ich Medienkonzeption an der Hochschule Furtwangen und verfasse
+			meine Abschlussarbeit. Hierfür untersuche ich, wie verschiedene Klänge empfunden und beschrieben werden.
+		</p>
+		<p>
+			Die Bearbeitungszeit dieser Umfrage beträgt circa <b>5 Minuten.</b>
+			Alle persönlichen Daten werden anonym erhoben und können Ihrer Person nicht zugeordnet
+			werden. Sie werden
+			lediglich im Rahmen meiner Bachelorthesis verarbeitet und nicht an Dritte weitergegeben. Die Umfrage kann
+			jederzeit beendet werden, wodurch keine Daten erhoben werden.
+		</p>
+		<p>
+			Mit einem Klick auf Start erklären Sie sich bereit, dass Ihre Daten in
+			oben genanntem Rahmen erhoben und verarbeitet werden dürfen.
+		</p>
+		<p>Vielen Dank für Ihre Teilnahme!</p>
+		<div class="buttonBox">
+			<button id="start">Start</button>
+		</div>
+	</div>
 	<form id="form" name="myForm" method="GET">
 		<h2>Persönliche Daten</h2>
 		<div id="demographics">
@@ -220,8 +242,8 @@
 			<input type="text" name="generalFeeling" placeholder="Begriff" id="generalFeeling">
 		</div>
 	</form>
-	
-	<div id="buttonBox">
+
+	<div class="buttonBox">
 		<button type="button" form="form">Abschicken</button>
 	</div>
 </body>

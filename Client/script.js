@@ -12,16 +12,27 @@ var ASMR_Script;
     window.addEventListener("load", handleLoad);
     let form;
     let submit;
+    let start;
     //let url: string = "http://localhost:5001";
     let url = "https://asmr-umfrage.herokuapp.com/";
     // Load-Funktion
     function handleLoad(_event) {
         ASMR_Script.generateContent();
         form = document.querySelector("form");
+        start = document.getElementById("start");
         submit = document.querySelector("button[type=button]");
+        form.style.display = "none";
+        submit.style.display = "none";
+        start.addEventListener("click", startQuestions);
         submit.addEventListener("click", sendForms);
         // Stop audio when other starts
         document.addEventListener('play', function (e) { stopAudio(e); }, true);
+    }
+    function startQuestions() {
+        document.getElementById("introduction").style.display = "none";
+        form.style.display = "block";
+        submit.style.display = "inline";
+        window.scrollTo(0, 0);
     }
     function sendForms() {
         return __awaiter(this, void 0, void 0, function* () {

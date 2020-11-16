@@ -2,6 +2,7 @@ namespace ASMR_Script {
     window.addEventListener("load", handleLoad);
     let form: HTMLFormElement;
     let submit: HTMLButtonElement;
+    let start: HTMLButtonElement;
     //let url: string = "http://localhost:5001";
     let url: string = "https://asmr-umfrage.herokuapp.com/";
 
@@ -11,12 +12,26 @@ namespace ASMR_Script {
         generateContent();
 
         form = <HTMLFormElement>document.querySelector("form");
+        start = <HTMLButtonElement>document.getElementById("start");
         submit = <HTMLButtonElement>document.querySelector("button[type=button]");
 
+        form.style.display = "none";
+        submit.style.display = "none";
+
+        start.addEventListener("click", startQuestions);
         submit.addEventListener("click", sendForms);
 
         // Stop audio when other starts
         document.addEventListener('play', function (e) { stopAudio(e) }, true);
+
+    }
+
+    function startQuestions(): void {
+
+        document.getElementById("introduction").style.display = "none";
+        form.style.display = "block";
+        submit.style.display = "inline";
+        window.scrollTo(0,0);
 
     }
 

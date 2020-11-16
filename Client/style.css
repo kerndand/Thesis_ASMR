@@ -68,7 +68,7 @@ input[type="text"], input[type="number"], select{
     font-size: 16px;
 }
 
-#buttonBox{
+.buttonBox{
     text-align: center;
 }
 
