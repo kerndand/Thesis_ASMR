@@ -24,6 +24,10 @@ span{
     display: inline-block;
 }
 
+#introduction{
+    display: none;
+}
+
 #headphones{
     color: red;
     font-size: 24px;
