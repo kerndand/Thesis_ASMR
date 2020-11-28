@@ -4,7 +4,7 @@ namespace ASMR_Script {
     let submit: HTMLButtonElement;
     let start: HTMLButtonElement;
     //let url: string = "http://localhost:5001";
-    let url: string = "https://asmr-umfrage.herokuapp.com/";
+    //let url: string = "https://asmr-umfrage.herokuapp.com/";
 
     // Load-Funktion
     function handleLoad(_event: Event): void {

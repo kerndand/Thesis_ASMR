@@ -14,7 +14,7 @@ var ASMR_Script;
     let submit;
     let start;
     //let url: string = "http://localhost:5001";
-    let url = "https://asmr-umfrage.herokuapp.com/";
+    //let url: string = "https://asmr-umfrage.herokuapp.com/";
     // Load-Funktion
     function handleLoad(_event) {
         ASMR_Script.generateContent();

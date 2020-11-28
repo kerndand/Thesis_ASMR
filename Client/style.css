@@ -1,3 +1,7 @@
+#introduction, form{
+    display: none;
+}
+
 .file{
     display: none;
 }
@@ -22,10 +26,6 @@ hr{
 span{
     padding: 2px;
     display: inline-block;
-}
-
-#introduction{
-    display: none;
 }
 
 #headphones{
