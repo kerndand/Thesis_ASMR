@@ -5,8 +5,8 @@ namespace ASMR_Script {
 
     // Multidimensionale Arrays mit Daten für die Radio-Buttons
     let adjArrays = [
-        ["schrill", "hart", "stechend", "metallisch", "rhytmisch", "hart", "gleichmäßig", "pulsierend", "kühl", "unruhig"],
-        ["gleichmäßig", "rau", "ruhig", "schrill", "dumpf", "regelmäßig", "kräftig", "ruhig", "schwankend", "rhytmisch"],
+        ["schrill", "hart", "stechend", "metallisch", "rhythmisch", "hart", "gleichmäßig", "pulsierend", "kühl", "unruhig"],
+        ["gleichmäßig", "rau", "ruhig", "schrill", "dumpf", "regelmäßig", "kräftig", "ruhig", "schwankend", "rhythmisch"],
         ["stechend", "aufdringlich", "gleichmäßig", "ruhig", "erdrückend", "langsam", "erdrückend", "körperhaft", "hoch", "rau"]
     ];
 
